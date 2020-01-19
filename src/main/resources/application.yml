@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      max-active: 10
+      min-idle: 3
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+mybatis:
+  #别名可以不要type-aliases-package: com.mapper
+  #mapper-locations必须要
+  mapper-locations: classpath*:mapping/*.xml
+logging:
+  file:
+    path: D://
+    name: springbootmybatispool
+
